@@ -7,12 +7,13 @@ const StyledCard = styled.div`
   width: 200px;
   height: 100px;
   align-content: center;
+
+  &:hover {
+    box-shadow: 0px 0px 10px 10px var(--shadow-color);
+    transition: all 0.3s ease;
+  }
 `;
 
 export const Card = () => {
-  return (
-    <StyledCard style={{ boxShadow: "0px 10px 10px 0px var(--shadow-color)" }}>
-      Card Sample
-    </StyledCard>
-  );
+  return <StyledCard>Card Sample</StyledCard>;
 };
