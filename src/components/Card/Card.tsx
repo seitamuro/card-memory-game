@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import "./Card.css";
 
 const StyledCard = styled.div`
   width: 200px;
@@ -55,7 +56,7 @@ export const Card = ({ back }: CardProps) => {
   return (
     <StyledCard onClick={() => setIsFlipped((prev) => !prev)}>
       <CardInner isFlipped={isFlipped}>
-        <CardFront style={{ background: "blue" }}></CardFront>
+        <CardFront className="card-back"></CardFront>
         <CardBack>{back}</CardBack>
       </CardInner>
     </StyledCard>

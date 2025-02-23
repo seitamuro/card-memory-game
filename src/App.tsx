@@ -19,7 +19,7 @@ function App() {
 
   const icons = Array.from(
     { length: 16 },
-    () => iconList[Math.round(Math.random() * iconList.length)]
+    () => iconList[Math.floor(Math.random() * iconList.length)]
   );
 
   return (
