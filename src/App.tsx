@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import styled from "styled-components";
 import "./App.css";
 import { Card } from "./components/Card";
@@ -10,10 +9,6 @@ const CardContainer = styled.div`
 `;
 
 function App() {
-  useEffect(() => {
-    document.documentElement.classList.add("lightmode");
-  }, []);
-
   return (
     <div style={{ width: "80vw" }}>
       <CardContainer>
