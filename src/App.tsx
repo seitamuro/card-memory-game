@@ -1,20 +1,15 @@
-import { createGlobalStyle } from "styled-components";
+import { useEffect } from "react";
 import "./App.css";
-
-interface GlobalStyleProps {
-  backgroundColor: string;
-}
-
-const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
-  body {
-    background-color: ${(props) => props.backgroundColor};
-  }
-`;
+import { Card } from "./components/Card";
 
 function App() {
+  useEffect(() => {
+    document.documentElement.classList.add("lightmode");
+  }, []);
+
   return (
     <>
-      <GlobalStyle backgroundColor="white" />
+      <Card />
     </>
   );
 }
