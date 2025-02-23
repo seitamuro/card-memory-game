@@ -10,5 +10,9 @@ const StyledCard = styled.div`
 `;
 
 export const Card = () => {
-  return <StyledCard>Card Sample</StyledCard>;
+  return (
+    <StyledCard style={{ boxShadow: "0px 10px 10px 0px var(--shadow-color)" }}>
+      Card Sample
+    </StyledCard>
+  );
 };
