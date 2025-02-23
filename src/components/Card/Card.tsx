@@ -9,7 +9,7 @@ const StyledCard = styled.div`
 `;
 
 interface CardInnerProps {
-  isFlipped: boolean;
+  $isFlipped: boolean;
 }
 
 const CardInner = styled.div<CardInnerProps>`
@@ -22,7 +22,8 @@ const CardInner = styled.div<CardInnerProps>`
   height: 100%;
   align-item: center;
 
-  transform: ${(props) => (props.isFlipped ? "rotateY(180deg)" : "rotateY(0)")};
+  transform: ${(props) =>
+    props.$isFlipped ? "rotateY(180deg)" : "rotateY(0)"};
   &:hover {
     box-shadow: 0px 0px 10px 10px var(--shadow-color);
     transition: all 0.3s ease;
@@ -55,7 +56,7 @@ export const Card = ({ back }: CardProps) => {
 
   return (
     <StyledCard onClick={() => setIsFlipped((prev) => !prev)}>
-      <CardInner isFlipped={isFlipped}>
+      <CardInner $isFlipped={isFlipped}>
         <CardFront className="card-back"></CardFront>
         <CardBack>{back}</CardBack>
       </CardInner>
