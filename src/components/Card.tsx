@@ -32,6 +32,7 @@ const CardSide = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
+  border-radius: 10px;
   backface-visibility: hidden;
   display: flex;
   align-items: center;
@@ -44,13 +45,18 @@ const CardBack = styled(CardSide)`
   transform: rotateY(180deg);
 `;
 
-export const Card = () => {
+interface CardProps {
+  back: React.ReactNode;
+}
+
+export const Card = ({ back }: CardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
+
   return (
     <StyledCard onClick={() => setIsFlipped((prev) => !prev)}>
       <CardInner isFlipped={isFlipped}>
-        <CardFront>Front</CardFront>
-        <CardBack>Back</CardBack>
+        <CardFront style={{ background: "blue" }}></CardFront>
+        <CardBack>{back}</CardBack>
       </CardInner>
     </StyledCard>
   );
